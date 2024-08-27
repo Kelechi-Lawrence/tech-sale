@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.navbar{
+    background: black;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    font-size: 1rem;
+    position:sticky;
+    z-index: 999;
+    top: 0;
+    
+}
+.nav_container{
+    display: flex;
+    justify-content: space-between;
+    top:1 ;
+    height: 80px;
+    width: 100%;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+#navbar-logo{
+    color: #ff7706;
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-size: 2rem;
+}
+.fa-gem{
+    margin-right: 0.5rem;
+}
+.navbar_menu{
+    display: flex;
+    text-align: center;
+    list-style: none;
+    align-items: center;
+    
+}
+.nav_links{
+    color: #fff;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1cm;
+    height: 100%;
+
+}
+.nav_btn{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    outline: 1px solid white;
+    border-radius: 4px;
+    background-color: #ff7706;
+    color: #fff;
+}
+.btn:hover{
+background-color: #00f;
+transition: all 0.3s ease;
+}
+.nav_links:hover{
+color: #ff7706;
+transition: all 0.3s ease;
+}
+
+
+.next{
+margin: 250px 20px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 4rem;
+color: #ff7706;
+
+}
+.purple{
+   color: red;
+}
+.dred{
+    color: rgb(90, 0, 174);
+}
+/* Media query for smaller screens */
+@media screen and (max-width: 960px) {
+    .navbarmobile_toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbarmobile_toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    } 
+
+    .navbar_menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #131311;
+    }
+
+    .navbar_menu.active {
+        top: 80px; /* Adjust this to align with the height of your navbar */
+        opacity: 1;
+        z-index: 99;
+    }
+
+    #menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
